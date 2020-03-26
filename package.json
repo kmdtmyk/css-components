@@ -1,0 +1,19 @@
+{
+  "name": "css-components",
+  "version": "0.0.0",
+  "description": "HTML components that work without JavaScript.",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://kmdtmyk@github.com/kmdtmyk/css-components.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kmdtmyk/css-components/issues"
+  },
+  "homepage": "https://github.com/kmdtmyk/css-components#readme"
+}
