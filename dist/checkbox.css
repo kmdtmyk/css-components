@@ -1,0 +1,126 @@
+input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: inherit;
+  position: relative;
+  top: 0.2em;
+  width: 1.2em;
+  height: 1.2em;
+  outline: 0;
+  margin: 0;
+  background-color: white;
+  border: 1px solid #a9a9a9;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+input[type='checkbox']:hover:not(:disabled) {
+  border-color: #80bdff;
+}
+
+input[type='checkbox']:focus {
+  box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+}
+
+input[type='checkbox']:disabled {
+  background-color: #e0e0e0;
+}
+
+input[type='checkbox']::after {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  width: 0;
+  height: 0;
+  margin-top: 50%;
+  margin-left: 50%;
+  border-width: 0;
+  border-style: solid;
+  opacity: 0;
+  transform: scale(0, 0);
+}
+
+input[type='checkbox']:checked::after {
+  width: 70%;
+  height: 30%;
+  margin-top: 50%;
+  margin-left: 40%;
+  border-left-width: 0.1em;
+  border-bottom-width: 0.1em;
+  transform: rotate(-50deg) scale(1, 1);
+  transform-origin: left bottom;
+}
+
+input[type='checkbox']:disabled::after {
+  border-color: #555;
+}
+
+input[type='checkbox']:indeterminate::after {
+  width: 60%;
+  height: 0;
+  margin-top: 45%;
+  margin-left: 20%;
+  border-bottom-width: 0.1em;
+  transform: scale(1, 1);
+}
+
+input[type='checkbox']:checked::after, input[type='checkbox']:indeterminate::after {
+  opacity: 1;
+}
+
+input[type='checkbox'].animated {
+  transition-duration: 0.3s;
+}
+
+input[type='checkbox'].animated::after {
+  transition-duration: 0.3s;
+}
+
+input[type='checkbox']::after {
+  border-color: black;
+}
+
+input[type='checkbox'].inverted:not(:disabled):checked, input[type='checkbox'].inverted:not(:disabled):indeterminate {
+  background-color: black;
+}
+
+input[type='checkbox'].inverted:not(:disabled):checked::after, input[type='checkbox'].inverted:not(:disabled):indeterminate::after {
+  border-color: white;
+}
+
+input[type='checkbox'].red::after {
+  border-color: red;
+}
+
+input[type='checkbox'].red.inverted:not(:disabled):checked, input[type='checkbox'].red.inverted:not(:disabled):indeterminate {
+  background-color: red;
+}
+
+input[type='checkbox'].red.inverted:not(:disabled):checked::after, input[type='checkbox'].red.inverted:not(:disabled):indeterminate::after {
+  border-color: white;
+}
+
+input[type='checkbox'].blue::after {
+  border-color: blue;
+}
+
+input[type='checkbox'].blue.inverted:not(:disabled):checked, input[type='checkbox'].blue.inverted:not(:disabled):indeterminate {
+  background-color: blue;
+}
+
+input[type='checkbox'].blue.inverted:not(:disabled):checked::after, input[type='checkbox'].blue.inverted:not(:disabled):indeterminate::after {
+  border-color: white;
+}
+
+input[type='checkbox'].green::after {
+  border-color: green;
+}
+
+input[type='checkbox'].green.inverted:not(:disabled):checked, input[type='checkbox'].green.inverted:not(:disabled):indeterminate {
+  background-color: green;
+}
+
+input[type='checkbox'].green.inverted:not(:disabled):checked::after, input[type='checkbox'].green.inverted:not(:disabled):indeterminate::after {
+  border-color: white;
+}
