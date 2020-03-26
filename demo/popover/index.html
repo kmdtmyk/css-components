@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js'></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.10.3/beautify-html.js'></script>
+    <link rel='stylesheet' href='../../dist/popover.css'>
+    <style>
+      body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .demo{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      }
+
+      .demo > div{
+        padding: 2px;
+      }
+
+      .demo .top-start{
+        grid-row: 1;
+        grid-column: 2;
+      }
+      .demo .top{
+        grid-row: 1;
+        grid-column: 3;
+      }
+      .demo .top-end{
+        grid-row: 1;
+        grid-column: 4;
+      }
+
+      .demo .left-start{
+        grid-row: 2;
+        grid-column: 1;
+      }
+      .demo .left{
+        grid-row: 3;
+        grid-column: 1;
+      }
+      .demo .left-end{
+        grid-row: 4;
+        grid-column: 1;
+      }
+
+      .demo .right-start{
+        grid-row: 2;
+        grid-column: 5;
+      }
+      .demo .right{
+        grid-row: 3;
+        grid-column: 5;
+      }
+      .demo .right-end{
+        grid-row: 4;
+        grid-column: 5;
+      }
+
+      .demo .bottom-start{
+        grid-row: 5;
+        grid-column: 2;
+      }
+      .demo .bottom{
+        grid-row: 5;
+        grid-column: 3;
+      }
+      .demo .bottom-end{
+        grid-row: 5;
+        grid-column: 4;
+      }
+
+      .demo summary{
+        display: inline-block;
+        border: 1px solid #888;
+        padding: 2px;
+        width: 7em;
+        text-align: center;
+      }
+
+      .demo .popover-content{
+        padding: 0.4rem;
+      }
+
+      .demo .popover-content pre{
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='demo'>
+      <div class='top-start'>
+        <details class='popover popover-top-start'>
+          <summary>top start</summary>
+          <div class='popover-content'>content</div>
+        </details>
+      </div>
+      <div class='top'>
+        <details class='popover popover-top'>
+          <summary>top</summary>
+          <div class='popover-content'>content</div>
+        </details>
+      </div>
+      <div class='top-end'>
+        <details class='popover popover-top-end'>
+          <summary>top end</summary>
+          <div class='popover-content'>content</div>
+        </details>
+      </div>
+
+      <div class='left-start'>
+        <details class='popover popover-left-start'>
+          <summary>left start</summary>
+          <div class='popover-content'>content</div>
+        </details>
+      </div>
+      <div class='left'>
+        <details class='popover popover-left'>
+          <summary>left</summary>
+          <div class='popover-content'>content</div>
+        </details>
+      </div>
+      <div class='left-end'>
+        <details class='popover popover-left-end'>
+          <summary>left end</summary>
+          <div class='popover-content'>content</div>
+        </details>
+      </div>
+
+      <div class='right-start'>
+          <details class='popover popover-right-start'>
+          <summary>right start</summary>
+          <div class='popover-content'>content</div>
+        </details>
+      </div>
+      <div class='right'>
+        <details class='popover popover-right'>
+          <summary>right</summary>
+          <div class='popover-content'>content</div>
+        </details>
+      </div>
+      <div class='right-end'>
+        <details class='popover popover-right-end'>
+          <summary>right end</summary>
+          <div class='popover-content'>content</div>
+        </details>
+      </div>
+
+      <div class='bottom-start'>
+          <details class='popover popover-bottom-start'>
+          <summary>bottom start</summary>
+          <div class='popover-content'>content</div>
+        </details>
+      </div>
+      <div class='bottom'>
+        <details class='popover popover-bottom'>
+          <summary>bottom</summary>
+          <div class='popover-content'>content</div>
+        </details>
+      </div>
+      <div class='bottom-end'>
+        <details class='popover popover-bottom-end'>
+          <summary>bottom end</summary>
+          <div class='popover-content'>content</div>
+        </details>
+      </div>
+    </div>
+    <script>
+
+      document.querySelectorAll('.popover').forEach(it => it.classList.add('popover-arrow'))
+
+      document.querySelectorAll('.demo .popover').forEach(popover => {
+        const html = html_beautify(popover.parentElement.innerHTML)
+        const content = popover.querySelector('.popover-content')
+        content.innerHTML = '<pre><code class="html"></code></pre>'
+        popover.querySelector('pre code').innerText = html
+      })
+
+      document.querySelectorAll('pre code').forEach(block => {
+        hljs.highlightBlock(block)
+      })
+
+    </script>
+  </body>
+</html>

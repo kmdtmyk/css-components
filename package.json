@@ -4,6 +4,8 @@
   "description": "HTML components that work without JavaScript.",
   "main": "",
   "scripts": {
+    "start": "npm run build -- --watch",
+    "build": "node-sass src --output dist --output-style expanded",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/kmdtmyk/css-components/issues"
   },
-  "homepage": "https://github.com/kmdtmyk/css-components#readme"
+  "homepage": "https://github.com/kmdtmyk/css-components#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  }
 }
