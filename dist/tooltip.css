@@ -120,10 +120,13 @@
   z-index: 50;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.5s;
 }
 
 .tooltip:hover:before, .tooltip:hover .tooltip-content {
   opacity: 1;
   pointer-events: auto;
+}
+
+body:hover .tooltip:before, body:hover .tooltip .tooltip-content {
+  transition: opacity 0.5s;
 }

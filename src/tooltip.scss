@@ -150,7 +150,6 @@
     z-index: 50;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.5s;
   }
 
   &:hover{
@@ -160,4 +159,12 @@
     }
   }
 
+}
+
+body:hover{
+  .tooltip{
+    &:before, .tooltip-content{
+      transition: opacity 0.5s;
+    }
+  }
 }
