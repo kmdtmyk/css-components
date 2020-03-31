@@ -14,86 +14,90 @@
     <script src='index.js'></script>
   </head>
   <body>
-    <div id='app' class='container'>
-      <h2>Popover</h2>
-      <div class='example d-flex justify-content-center'>
-        <details :class='popoverClass'>
-          <summary class='button'>popover</summary>
-          <div class='popover-content p-2' style='width: 20rem;'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-        </details>
+    <div class='container'>
+      <div id='popover'>
+        <h2>Popover</h2>
+        <div class='example d-flex justify-content-center'>
+          <details :class='popoverClass'>
+            <summary class='button'>popover</summary>
+            <div class='popover-content p-2' style='width: 20rem;'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+          </details>
+        </div>
+        <div class='knobs my-2'>
+          <div class='knobs-item'>
+            <label>direction</label>
+            <select v-model='popover.direction'>
+              <option value='top-start'>top start</option>
+              <option value='top'>top</option>
+              <option value='top-end'>top end</option>
+              <option value='left-start'>left start</option>
+              <option value='left'>left</option>
+              <option value='left-end'>left end</option>
+              <option value='right-start'>right start</option>
+              <option value='right'>right</option>
+              <option value='right-end'>right end</option>
+              <option value='bottom-start'>bottom start</option>
+              <option value='bottom'>bottom</option>
+              <option value='bottom-end'>bottom end</option>
+            </select>
+          </div>
+          <div class='knobs-item'>
+            <label for='popover-arrow'>arrow</label>
+            <input type='checkbox' v-model='popover.arrow' id='popover-arrow'>
+          </div>
+          <div class='knobs-item'>
+            <label for='popover-dark'>dark</label>
+            <input type='checkbox' v-model='popover.dark' id='popover-dark'>
+          </div>
+        </div>
+        <pre><code class='html' ref='code'></code></pre>
       </div>
-      <div class='knobs my-2'>
-        <div class='knobs-item'>
-          <label>direction</label>
-          <select v-model='popover.direction'>
-            <option value='top-start'>top start</option>
-            <option value='top'>top</option>
-            <option value='top-end'>top end</option>
-            <option value='left-start'>left start</option>
-            <option value='left'>left</option>
-            <option value='left-end'>left end</option>
-            <option value='right-start'>right start</option>
-            <option value='right'>right</option>
-            <option value='right-end'>right end</option>
-            <option value='bottom-start'>bottom start</option>
-            <option value='bottom'>bottom</option>
-            <option value='bottom-end'>bottom end</option>
-          </select>
-        </div>
-        <div class='knobs-item'>
-          <label for='popover-arrow'>arrow</label>
-          <input type='checkbox' v-model='popover.arrow' id='popover-arrow'>
-        </div>
-        <div class='knobs-item'>
-          <label for='popover-dark'>dark</label>
-          <input type='checkbox' v-model='popover.dark' id='popover-dark'>
-        </div>
-      </div>
-      <pre><code class='html' ref='popoverCode'></code></pre>
 
-      <h2>Tooltip</h2>
-      <div class='example d-flex justify-content-center'>
-        <div :class='tooltipClass'>
-          <div class='button'>tooltip</div>
-          <div class='tooltip-content p-2' style='width: 20rem;'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+      <div id='tooltip'>
+        <h2>Tooltip</h2>
+        <div class='example d-flex justify-content-center'>
+          <div :class='tooltipClass'>
+            <div class='button'>tooltip</div>
+            <div class='tooltip-content p-2' style='width: 20rem;'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+          </div>
         </div>
+        <div class='knobs my-2'>
+          <div class='knobs-item'>
+            <label>direction</label>
+            <select v-model='tooltip.direction'>
+              <option value='top-start'>top start</option>
+              <option value='top'>top</option>
+              <option value='top-end'>top end</option>
+              <option value='left-start'>left start</option>
+              <option value='left'>left</option>
+              <option value='left-end'>left end</option>
+              <option value='right-start'>right start</option>
+              <option value='right'>right</option>
+              <option value='right-end'>right end</option>
+              <option value='bottom-start'>bottom start</option>
+              <option value='bottom'>bottom</option>
+              <option value='bottom-end'>bottom end</option>
+            </select>
+          </div>
+          <div class='knobs-item'>
+            <label for='tooltip-arrow'>arrow</label>
+            <input type='checkbox' v-model='tooltip.arrow' id='tooltip-arrow'>
+          </div>
+          <div class='knobs-item'>
+            <label for='tooltip-dark'>dark</label>
+            <input type='checkbox' v-model='tooltip.dark' id='tooltip-dark'>
+          </div>
+          <div class='knobs-item'>
+            <label for='tooltip-fade'>fade</label>
+            <input type='checkbox' v-model='tooltip.fade' id='tooltip-fade'>
+          </div>
+          <div class='knobs-item'>
+            <label for='tooltip-delay'>delay</label>
+            <input type='checkbox' v-model='tooltip.delay' id='tooltip-delay'>
+          </div>
+        </div>
+        <pre><code class='html' ref='code'></code></pre>
       </div>
-      <div class='knobs my-2'>
-        <div class='knobs-item'>
-          <label>direction</label>
-          <select v-model='tooltip.direction'>
-            <option value='top-start'>top start</option>
-            <option value='top'>top</option>
-            <option value='top-end'>top end</option>
-            <option value='left-start'>left start</option>
-            <option value='left'>left</option>
-            <option value='left-end'>left end</option>
-            <option value='right-start'>right start</option>
-            <option value='right'>right</option>
-            <option value='right-end'>right end</option>
-            <option value='bottom-start'>bottom start</option>
-            <option value='bottom'>bottom</option>
-            <option value='bottom-end'>bottom end</option>
-          </select>
-        </div>
-        <div class='knobs-item'>
-          <label for='tooltip-arrow'>arrow</label>
-          <input type='checkbox' v-model='tooltip.arrow' id='tooltip-arrow'>
-        </div>
-        <div class='knobs-item'>
-          <label for='tooltip-dark'>dark</label>
-          <input type='checkbox' v-model='tooltip.dark' id='tooltip-dark'>
-        </div>
-        <div class='knobs-item'>
-          <label for='tooltip-fade'>fade</label>
-          <input type='checkbox' v-model='tooltip.fade' id='tooltip-fade'>
-        </div>
-        <div class='knobs-item'>
-          <label for='tooltip-delay'>delay</label>
-          <input type='checkbox' v-model='tooltip.delay' id='tooltip-delay'>
-        </div>
-      </div>
-      <pre><code class='html' ref='tooltipCode'></code></pre>
     </div>
   </body>
 </html>

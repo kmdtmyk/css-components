@@ -2,20 +2,13 @@
 document.addEventListener('DOMContentLoaded', e => {
 
   new Vue({
-    el: '#app',
+    el: '#popover',
     data(){
       return {
         popover: {
           direction: 'bottom',
           arrow: false,
           dark: false,
-        },
-        tooltip: {
-          direction: 'bottom',
-          arrow: false,
-          dark: false,
-          fade: false,
-          delay: false,
         },
       }
     },
@@ -32,6 +25,46 @@ document.addEventListener('DOMContentLoaded', e => {
         }
         return result
       },
+    },
+    mounted(){
+      this.updateCode()
+    },
+    watch: {
+      popover: {
+        handler(){
+          this.updateCode()
+        },
+        deep: true,
+      },
+    },
+    methods: {
+      updateCode(){
+        const {code} = this.$refs
+        code.innerText = html_beautify(`
+          <details class="${this.popoverClass.join(' ')}">
+            <summary>popover</summary>
+            <div class="popover-content">...</div>
+          </details>
+        `)
+        hljs.highlightBlock(code)
+      },
+    }
+  })
+
+  new Vue({
+    el: '#tooltip',
+    data(){
+      return {
+        tooltip: {
+          direction: 'bottom',
+          arrow: false,
+          dark: false,
+          fade: false,
+          delay: false,
+        },
+      }
+    },
+    computed: {
       tooltipClass(){
         const {tooltip} = this
         const result = ['tooltip']
@@ -52,36 +85,19 @@ document.addEventListener('DOMContentLoaded', e => {
       },
     },
     mounted(){
-      this.updatePopoverCode()
-      this.updateTooltipCode()
+      this.updateCode()
     },
     watch: {
-      popover: {
-        handler(){
-          this.updatePopoverCode()
-        },
-        deep: true,
-      },
       tooltip: {
         handler(){
-          this.updateTooltipCode()
+          this.updateCode()
         },
         deep: true,
       },
     },
     methods: {
-      updatePopoverCode(){
-        const code = this.$refs.popoverCode
-        code.innerText = html_beautify(`
-          <details class="${this.popoverClass.join(' ')}">
-            <summary>popover</summary>
-            <div class="popover-content">...</div>
-          </details>
-        `)
-        hljs.highlightBlock(code)
-      },
-      updateTooltipCode(){
-        const code = this.$refs.tooltipCode
+      updateCode(){
+        const {code} = this.$refs
         code.innerText = html_beautify(`
           <div class="${this.tooltipClass.join(' ')}">
             <div>tooltip</div>
