@@ -1,11 +1,44 @@
+
 [v-cloak]{
   display: none;
 }
 
-.text-left{
-  text-align: left;
+.container{
+  max-width: 800px;
+  margin: auto;
 }
 
-.text-nowrap{
-  white-space: nowrap;
+.example{
+  padding: 2rem;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+.example:before{
+  content: 'example';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ddd;
+  font-size: 0.9rem;
+}
+
+.button{
+  border: 1px solid #ccc;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.knobs{
+  display: flex;
+  margin: -0.5rem;
+}
+
+.knobs .knobs-item{
+  margin: 0.5rem;
+}
+
+.knobs .knobs-item label{
+  font-weight: bold;
+  font-size: 0.9rem;
 }
