@@ -130,3 +130,7 @@
 body:hover .tooltip.tooltip-fade:before, body:hover .tooltip.tooltip-fade .tooltip-content {
   transition: opacity 0.5s;
 }
+
+body:hover .tooltip.tooltip-delay:before, body:hover .tooltip.tooltip-delay .tooltip-content {
+  transition-delay: 0.3s;
+}

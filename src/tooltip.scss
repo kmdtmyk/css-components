@@ -166,9 +166,17 @@
 }
 
 body:hover{
-  .tooltip.tooltip-fade{
-    &:before, .tooltip-content{
-      transition: opacity 0.5s;
+  .tooltip{
+    &.tooltip-fade{
+      &:before, .tooltip-content{
+        transition: opacity 0.5s;
+      }
+    }
+
+    &.tooltip-delay{
+      &:before, .tooltip-content{
+        transition-delay: 0.3s;
+      }
     }
   }
 }

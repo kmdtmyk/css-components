@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', e => {
           direction: 'bottom',
           arrow: false,
           fade: false,
+          delay: false,
         },
       }
     },
@@ -39,6 +40,9 @@ document.addEventListener('DOMContentLoaded', e => {
         }
         if(tooltip.fade === true){
           result.push('tooltip-fade')
+        }
+        if(tooltip.delay === true){
+          result.push('tooltip-delay')
         }
         return result
       },
