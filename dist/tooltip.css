@@ -3,8 +3,9 @@
 }
 
 .tooltip .tooltip-content {
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #fff;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
   border-radius: 5px;
 }
 
@@ -70,67 +71,125 @@
   top: 100%;
 }
 
-.tooltip:before, .tooltip .tooltip-content {
+.tooltip:before, .tooltip:after, .tooltip .tooltip-content {
   position: absolute;
   z-index: 50;
   opacity: 0;
   pointer-events: none;
 }
 
-.tooltip:hover:before, .tooltip:hover .tooltip-content {
+.tooltip:hover:before, .tooltip:hover:after, .tooltip:hover .tooltip-content {
   opacity: 1;
   pointer-events: auto;
 }
 
-.tooltip.tooltip-arrow:before {
+.tooltip.tooltip-arrow:before, .tooltip.tooltip-arrow:after {
   content: '';
   border: 8px solid transparent;
 }
 
-.tooltip.tooltip-arrow.tooltip-left-start:before, .tooltip.tooltip-arrow.tooltip-left:before, .tooltip.tooltip-arrow.tooltip-left-end:before {
+.tooltip.tooltip-arrow.tooltip-left-start:before, .tooltip.tooltip-arrow.tooltip-left-start:after, .tooltip.tooltip-arrow.tooltip-left:before, .tooltip.tooltip-arrow.tooltip-left:after, .tooltip.tooltip-arrow.tooltip-left-end:before, .tooltip.tooltip-arrow.tooltip-left-end:after {
   top: 50%;
   transform: translateY(-50%);
 }
 
 .tooltip.tooltip-arrow.tooltip-left-start:before, .tooltip.tooltip-arrow.tooltip-left:before, .tooltip.tooltip-arrow.tooltip-left-end:before {
-  border-left-color: rgba(0, 0, 0, 0.8);
+  border-left-color: #ccc;
   left: 0;
 }
 
-.tooltip.tooltip-arrow.tooltip-right-start:before, .tooltip.tooltip-arrow.tooltip-right:before, .tooltip.tooltip-arrow.tooltip-right-end:before {
+.tooltip.tooltip-arrow.tooltip-left-start:after, .tooltip.tooltip-arrow.tooltip-left:after, .tooltip.tooltip-arrow.tooltip-left-end:after {
+  border-left-color: #fff;
+  left: -1px;
+}
+
+.tooltip.tooltip-arrow.tooltip-right-start:before, .tooltip.tooltip-arrow.tooltip-right-start:after, .tooltip.tooltip-arrow.tooltip-right:before, .tooltip.tooltip-arrow.tooltip-right:after, .tooltip.tooltip-arrow.tooltip-right-end:before, .tooltip.tooltip-arrow.tooltip-right-end:after {
   top: 50%;
   transform: translateY(-50%);
 }
 
 .tooltip.tooltip-arrow.tooltip-right-start:before, .tooltip.tooltip-arrow.tooltip-right:before, .tooltip.tooltip-arrow.tooltip-right-end:before {
-  border-right-color: rgba(0, 0, 0, 0.8);
+  border-right-color: #ccc;
   right: 0;
 }
 
-.tooltip.tooltip-arrow.tooltip-top-start:before, .tooltip.tooltip-arrow.tooltip-top:before, .tooltip.tooltip-arrow.tooltip-top-end:before {
+.tooltip.tooltip-arrow.tooltip-right-start:after, .tooltip.tooltip-arrow.tooltip-right:after, .tooltip.tooltip-arrow.tooltip-right-end:after {
+  border-right-color: #fff;
+  right: -1px;
+}
+
+.tooltip.tooltip-arrow.tooltip-top-start:before, .tooltip.tooltip-arrow.tooltip-top-start:after, .tooltip.tooltip-arrow.tooltip-top:before, .tooltip.tooltip-arrow.tooltip-top:after, .tooltip.tooltip-arrow.tooltip-top-end:before, .tooltip.tooltip-arrow.tooltip-top-end:after {
   left: 50%;
   transform: translateX(-50%);
 }
 
 .tooltip.tooltip-arrow.tooltip-top-start:before, .tooltip.tooltip-arrow.tooltip-top:before, .tooltip.tooltip-arrow.tooltip-top-end:before {
-  border-top-color: rgba(0, 0, 0, 0.8);
+  border-top-color: #ccc;
   top: 0;
 }
 
-.tooltip.tooltip-arrow.tooltip-bottom-start:before, .tooltip.tooltip-arrow.tooltip-bottom:before, .tooltip.tooltip-arrow.tooltip-bottom-end:before {
+.tooltip.tooltip-arrow.tooltip-top-start:after, .tooltip.tooltip-arrow.tooltip-top:after, .tooltip.tooltip-arrow.tooltip-top-end:after {
+  border-top-color: #fff;
+  top: -1px;
+}
+
+.tooltip.tooltip-arrow.tooltip-bottom-start:before, .tooltip.tooltip-arrow.tooltip-bottom-start:after, .tooltip.tooltip-arrow.tooltip-bottom:before, .tooltip.tooltip-arrow.tooltip-bottom:after, .tooltip.tooltip-arrow.tooltip-bottom-end:before, .tooltip.tooltip-arrow.tooltip-bottom-end:after {
   left: 50%;
   transform: translateX(-50%);
 }
 
 .tooltip.tooltip-arrow.tooltip-bottom-start:before, .tooltip.tooltip-arrow.tooltip-bottom:before, .tooltip.tooltip-arrow.tooltip-bottom-end:before {
-  border-bottom-color: rgba(0, 0, 0, 0.8);
+  border-bottom-color: #ccc;
   bottom: 0;
 }
 
-body:hover .tooltip.tooltip-fade:before, body:hover .tooltip.tooltip-fade .tooltip-content {
+.tooltip.tooltip-arrow.tooltip-bottom-start:after, .tooltip.tooltip-arrow.tooltip-bottom:after, .tooltip.tooltip-arrow.tooltip-bottom-end:after {
+  border-bottom-color: #fff;
+  bottom: -1px;
+}
+
+.tooltip.tooltip-dark .tooltip-content {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: none;
+}
+
+.tooltip.tooltip-dark.tooltip-left-start:before, .tooltip.tooltip-dark.tooltip-left:before, .tooltip.tooltip-dark.tooltip-left-end:before {
+  border-left-color: rgba(0, 0, 0, 0.8);
+}
+
+.tooltip.tooltip-dark.tooltip-left-start:after, .tooltip.tooltip-dark.tooltip-left:after, .tooltip.tooltip-dark.tooltip-left-end:after {
+  content: none;
+}
+
+.tooltip.tooltip-dark.tooltip-right-start:before, .tooltip.tooltip-dark.tooltip-right:before, .tooltip.tooltip-dark.tooltip-right-end:before {
+  border-right-color: rgba(0, 0, 0, 0.8);
+}
+
+.tooltip.tooltip-dark.tooltip-right-start:after, .tooltip.tooltip-dark.tooltip-right:after, .tooltip.tooltip-dark.tooltip-right-end:after {
+  content: none;
+}
+
+.tooltip.tooltip-dark.tooltip-top-start:before, .tooltip.tooltip-dark.tooltip-top:before, .tooltip.tooltip-dark.tooltip-top-end:before {
+  border-top-color: rgba(0, 0, 0, 0.8);
+}
+
+.tooltip.tooltip-dark.tooltip-top-start:after, .tooltip.tooltip-dark.tooltip-top:after, .tooltip.tooltip-dark.tooltip-top-end:after {
+  content: none;
+}
+
+.tooltip.tooltip-dark.tooltip-bottom-start:before, .tooltip.tooltip-dark.tooltip-bottom:before, .tooltip.tooltip-dark.tooltip-bottom-end:before {
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+}
+
+.tooltip.tooltip-dark.tooltip-bottom-start:after, .tooltip.tooltip-dark.tooltip-bottom:after, .tooltip.tooltip-dark.tooltip-bottom-end:after {
+  content: none;
+}
+
+body:hover .tooltip.tooltip-fade:before, body:hover .tooltip.tooltip-fade:after, body:hover .tooltip.tooltip-fade .tooltip-content {
   transition: opacity 0.5s;
 }
 
-body:hover .tooltip.tooltip-delay:before, body:hover .tooltip.tooltip-delay .tooltip-content {
+body:hover .tooltip.tooltip-delay:before, body:hover .tooltip.tooltip-delay:after, body:hover .tooltip.tooltip-delay .tooltip-content {
   transition-delay: 0.3s;
 }

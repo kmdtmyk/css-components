@@ -1,12 +1,13 @@
 .tooltip{
-
-  $background-color: rgba(0, 0, 0, 0.8);
+  $border-color: #ccc;
+  $background-color: #fff;
 
   position: relative;
 
   .tooltip-content{
-    color: #fff;
     background-color: $background-color;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid $border-color;
     border-radius: 5px;
   }
 
@@ -96,7 +97,7 @@
     }
   }
 
-  &:before, .tooltip-content{
+  &:before, &:after, .tooltip-content{
     position: absolute;
     z-index: 50;
     opacity: 0;
@@ -104,7 +105,7 @@
   }
 
   &:hover{
-    &:before, .tooltip-content{
+    &:before, &:after, .tooltip-content{
       opacity: 1;
       pointer-events: auto;
     }
@@ -112,52 +113,115 @@
 
   &.tooltip-arrow{
 
-    &:before{
+    &:before, &:after{
       content: '';
       border: 8px solid transparent;
     }
 
     &.tooltip-left-start, &.tooltip-left, &.tooltip-left-end{
-      &:before{
+      &:before, &:after{
         top: 50%;
         transform: translateY(-50%);
       }
       &:before{
-        border-left-color: $background-color;
+        border-left-color: $border-color;
         left: 0;
+      }
+      &:after{
+        border-left-color: $background-color;
+        left: -1px;
+      }
+    }
+
+    &.tooltip-right-start, &.tooltip-right, &.tooltip-right-end{
+      &:before, &:after{
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:before{
+        border-right-color: $border-color;
+        right: 0;
+      }
+      &:after{
+        border-right-color: $background-color;
+        right: -1px;
+      }
+    }
+
+    &.tooltip-top-start, &.tooltip-top, &.tooltip-top-end{
+      &:before, &:after{
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:before{
+        border-top-color: $border-color;
+        top: 0;
+      }
+      &:after{
+        border-top-color: $background-color;
+        top: -1px;
+      }
+    }
+
+    &.tooltip-bottom-start, &.tooltip-bottom, &.tooltip-bottom-end{
+      &:before, &:after{
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:before{
+        border-bottom-color: $border-color;
+        bottom: 0;
+      }
+      &:after{
+        border-bottom-color: $background-color;
+        bottom: -1px;
+      }
+    }
+
+  }
+
+  &.tooltip-dark{
+    $background-color: rgba(0, 0, 0, 0.8);
+
+    .tooltip-content{
+      color: #fff;
+      background-color: $background-color;
+      border: none;
+    }
+
+    &.tooltip-left-start, &.tooltip-left, &.tooltip-left-end{
+      &:before{
+        border-left-color: $background-color;
+      }
+      &:after{
+        content: none;
       }
     }
 
     &.tooltip-right-start, &.tooltip-right, &.tooltip-right-end{
       &:before{
-        top: 50%;
-        transform: translateY(-50%);
-      }
-      &:before{
         border-right-color: $background-color;
-        right: 0;
+      }
+      &:after{
+        content: none;
       }
     }
 
     &.tooltip-top-start, &.tooltip-top, &.tooltip-top-end{
       &:before{
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      &:before{
         border-top-color: $background-color;
-        top: 0;
+      }
+      &:after{
+        content: none;
       }
     }
 
     &.tooltip-bottom-start, &.tooltip-bottom, &.tooltip-bottom-end{
       &:before{
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      &:before{
         border-bottom-color: $background-color;
-        bottom: 0;
+      }
+      &:after{
+        content: none;
       }
     }
 
@@ -168,13 +232,13 @@
 body:hover{
   .tooltip{
     &.tooltip-fade{
-      &:before, .tooltip-content{
+      &:before, &:after, .tooltip-content{
         transition: opacity 0.5s;
       }
     }
 
     &.tooltip-delay{
-      &:before, .tooltip-content{
+      &:before, &:after, .tooltip-content{
         transition-delay: 0.3s;
       }
     }
