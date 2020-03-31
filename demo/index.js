@@ -50,6 +50,46 @@ document.addEventListener('DOMContentLoaded', e => {
         }
         return result
       },
+    },
+    mounted(){
+      this.updatePopoverCode()
+      this.updateTooltipCode()
+    },
+    watch: {
+      popover: {
+        handler(){
+          this.updatePopoverCode()
+        },
+        deep: true,
+      },
+      tooltip: {
+        handler(){
+          this.updateTooltipCode()
+        },
+        deep: true,
+      },
+    },
+    methods: {
+      updatePopoverCode(){
+        const code = this.$refs.popoverCode
+        code.innerText = html_beautify(`
+          <details class="${this.popoverClass.join(' ')}">
+            <summary>popover</summary>
+            <div class="popover-content">...</div>
+          </details>
+        `)
+        hljs.highlightBlock(code)
+      },
+      updateTooltipCode(){
+        const code = this.$refs.tooltipCode
+        code.innerText = html_beautify(`
+          <div class="${this.tooltipClass.join(' ')}">
+            <div>tooltip</div>
+            <div class="tooltip-content">...</div>
+          </div>
+        `)
+        hljs.highlightBlock(code)
+      },
     }
   })
 
