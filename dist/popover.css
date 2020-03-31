@@ -161,3 +161,41 @@ details.popover.popover-arrow[open].popover-bottom-start:after, details.popover.
   border-bottom-color: #fff;
   bottom: -1px;
 }
+
+details.popover.popover-dark .popover-content {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: none;
+}
+
+details.popover.popover-dark.popover-arrow[open].popover-left-start:before, details.popover.popover-dark.popover-arrow[open].popover-left:before, details.popover.popover-dark.popover-arrow[open].popover-left-end:before {
+  border-left-color: rgba(0, 0, 0, 0.8);
+}
+
+details.popover.popover-dark.popover-arrow[open].popover-left-start:after, details.popover.popover-dark.popover-arrow[open].popover-left:after, details.popover.popover-dark.popover-arrow[open].popover-left-end:after {
+  content: none;
+}
+
+details.popover.popover-dark.popover-arrow[open].popover-right-start:before, details.popover.popover-dark.popover-arrow[open].popover-right:before, details.popover.popover-dark.popover-arrow[open].popover-right-end:before {
+  border-right-color: rgba(0, 0, 0, 0.8);
+}
+
+details.popover.popover-dark.popover-arrow[open].popover-right-start:after, details.popover.popover-dark.popover-arrow[open].popover-right:after, details.popover.popover-dark.popover-arrow[open].popover-right-end:after {
+  content: none;
+}
+
+details.popover.popover-dark.popover-arrow[open].popover-top-start:before, details.popover.popover-dark.popover-arrow[open].popover-top:before, details.popover.popover-dark.popover-arrow[open].popover-top-end:before {
+  border-top-color: rgba(0, 0, 0, 0.8);
+}
+
+details.popover.popover-dark.popover-arrow[open].popover-top-start:after, details.popover.popover-dark.popover-arrow[open].popover-top:after, details.popover.popover-dark.popover-arrow[open].popover-top-end:after {
+  content: none;
+}
+
+details.popover.popover-dark.popover-arrow[open].popover-bottom-start:before, details.popover.popover-dark.popover-arrow[open].popover-bottom:before, details.popover.popover-dark.popover-arrow[open].popover-bottom-end:before {
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+}
+
+details.popover.popover-dark.popover-arrow[open].popover-bottom-start:after, details.popover.popover-dark.popover-arrow[open].popover-bottom:after, details.popover.popover-dark.popover-arrow[open].popover-bottom-end:after {
+  content: none;
+}
