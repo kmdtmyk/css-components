@@ -9,7 +9,12 @@ document.addEventListener('DOMContentLoaded', e => {
           direction: 'bottom',
           arrow: false,
           dark: false,
-        }
+        },
+        tooltip: {
+          direction: 'bottom',
+          arrow: false,
+          dark: false,
+        },
       }
     },
     computed: {
@@ -24,7 +29,13 @@ document.addEventListener('DOMContentLoaded', e => {
           result.push('popover-dark')
         }
         return result
-      }
+      },
+      tooltipClass(){
+        const {tooltip} = this
+        const result = ['tooltip']
+        result.push(`tooltip-${tooltip.direction}`)
+        return result
+      },
     }
   })
 
