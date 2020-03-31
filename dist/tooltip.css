@@ -127,6 +127,6 @@
   pointer-events: auto;
 }
 
-body:hover .tooltip:before, body:hover .tooltip .tooltip-content {
+body:hover .tooltip.tooltip-fade:before, body:hover .tooltip.tooltip-fade .tooltip-content {
   transition: opacity 0.5s;
 }

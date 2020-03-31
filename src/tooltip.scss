@@ -162,7 +162,7 @@
 }
 
 body:hover{
-  .tooltip{
+  .tooltip.tooltip-fade{
     &:before, .tooltip-content{
       transition: opacity 0.5s;
     }
