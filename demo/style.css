@@ -3,6 +3,10 @@
   display: none;
 }
 
+h2{
+  border-bottom: 1px solid #eee;
+}
+
 .container{
   max-width: 800px;
   margin: auto;
