@@ -96,55 +96,6 @@
     }
   }
 
-  &:before{
-    content: '';
-    border: 8px solid transparent;
-  }
-
-  &.tooltip-left-start, &.tooltip-left, &.tooltip-left-end{
-    &:before{
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    &:before{
-      border-left-color: $background-color;
-      left: 0;
-    }
-  }
-
-  &.tooltip-right-start, &.tooltip-right, &.tooltip-right-end{
-    &:before{
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    &:before{
-      border-right-color: $background-color;
-      right: 0;
-    }
-  }
-
-  &.tooltip-top-start, &.tooltip-top, &.tooltip-top-end{
-    &:before{
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    &:before{
-      border-top-color: $background-color;
-      top: 0;
-    }
-  }
-
-  &.tooltip-bottom-start, &.tooltip-bottom, &.tooltip-bottom-end{
-    &:before{
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    &:before{
-      border-bottom-color: $background-color;
-      bottom: 0;
-    }
-  }
-
   &:before, .tooltip-content{
     position: absolute;
     z-index: 50;
@@ -157,6 +108,59 @@
       opacity: 1;
       pointer-events: auto;
     }
+  }
+
+  &.tooltip-arrow{
+
+    &:before{
+      content: '';
+      border: 8px solid transparent;
+    }
+
+    &.tooltip-left-start, &.tooltip-left, &.tooltip-left-end{
+      &:before{
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:before{
+        border-left-color: $background-color;
+        left: 0;
+      }
+    }
+
+    &.tooltip-right-start, &.tooltip-right, &.tooltip-right-end{
+      &:before{
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:before{
+        border-right-color: $background-color;
+        right: 0;
+      }
+    }
+
+    &.tooltip-top-start, &.tooltip-top, &.tooltip-top-end{
+      &:before{
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:before{
+        border-top-color: $background-color;
+        top: 0;
+      }
+    }
+
+    &.tooltip-bottom-start, &.tooltip-bottom, &.tooltip-bottom-end{
+      &:before{
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:before{
+        border-bottom-color: $background-color;
+        bottom: 0;
+      }
+    }
+
   }
 
 }

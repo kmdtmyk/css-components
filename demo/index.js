@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', e => {
         },
         tooltip: {
           direction: 'bottom',
+          arrow: false,
           fade: false,
         },
       }
@@ -33,6 +34,9 @@ document.addEventListener('DOMContentLoaded', e => {
         const {tooltip} = this
         const result = ['tooltip']
         result.push(`tooltip-${tooltip.direction}`)
+        if(tooltip.arrow === true){
+          result.push('tooltip-arrow')
+        }
         if(tooltip.fade === true){
           result.push('tooltip-fade')
         }
