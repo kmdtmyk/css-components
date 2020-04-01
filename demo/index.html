@@ -5,6 +5,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-utilities@4.1.3/bootstrap-utilities.min.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css'>
+    <link rel='stylesheet' href='../dist/checkbox.css'>
     <link rel='stylesheet' href='../dist/popover.css'>
     <link rel='stylesheet' href='../dist/tooltip.css'>
     <link rel='stylesheet' href='style.css'>
@@ -15,6 +16,54 @@
   </head>
   <body>
     <div class='container mb-5'>
+      <div id='checkbox'>
+        <h2>Checkbox</h2>
+        <div class='example d-flex justify-content-center align-items-center flex-column'>
+          <div :style='{fontSize: `${fontSize}px`}'>
+            <input type='checkbox' :class='checkboxClass' :disabled='checkbox.disabled'>
+            <input type='checkbox' :class='checkboxClass' checked :disabled='checkbox.disabled'>
+            <input type='checkbox' :class='checkboxClass' indeterminate :disabled='checkbox.disabled'>
+          </div>
+          <div :style='{fontSize: `${fontSize}px`}'>
+            <label>
+              <input type='checkbox' :class='checkboxClass' :disabled='checkbox.disabled'>
+              unchecked
+            </label>
+            <label>
+              <input type='checkbox' :class='checkboxClass' checked :disabled='checkbox.disabled'>
+              checked
+            </label>
+            <label>
+              <input type='checkbox' :class='checkboxClass' indeterminate :disabled='checkbox.disabled'>
+              indeterminate
+            </label>
+          </div>
+        </div>
+        <div class='knobs my-2'>
+          <div class='knobs-item'>
+            <label>font size</label>
+            <input type='number' v-model='fontSize' style='max-width: 4em;'>
+          </div>
+          <div class='knobs-item'>
+            <label for='checkbox-disabled'>disabled</label>
+            <input type='checkbox' v-model='checkbox.disabled' id='checkbox-disabled'>
+          </div>
+          <div class='knobs-item'>
+            <label for='checkbox-inverted'>inverted</label>
+            <input type='checkbox' v-model='checkbox.inverted' id='checkbox-inverted'>
+          </div>
+          <div class='knobs-item'>
+            <label for='checkbox-animated'>animated</label>
+            <input type='checkbox' v-model='checkbox.animated' id='checkbox-animated'>
+          </div>
+        </div>
+        <pre><code class='html' ref='code'></code></pre>
+        <div>
+          <a href='../dist/checkbox.css'>css</a>
+          <a href='../src/checkbox.scss'>scss</a>
+        </div>
+      </div>
+
       <div id='popover'>
         <h2>Popover</h2>
         <div class='example d-flex justify-content-center'>

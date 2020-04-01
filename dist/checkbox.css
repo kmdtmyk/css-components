@@ -1,4 +1,4 @@
-input[type='checkbox'] {
+input[type='checkbox'].checkbox {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -15,19 +15,19 @@ input[type='checkbox'] {
   box-sizing: border-box;
 }
 
-input[type='checkbox']:hover:not(:disabled) {
+input[type='checkbox'].checkbox:hover:not(:disabled) {
   border-color: #80bdff;
 }
 
-input[type='checkbox']:focus {
+input[type='checkbox'].checkbox:focus {
   box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
 }
 
-input[type='checkbox']:disabled {
+input[type='checkbox'].checkbox:disabled {
   background-color: #e0e0e0;
 }
 
-input[type='checkbox']::after {
+input[type='checkbox'].checkbox::after {
   content: '';
   position: absolute;
   box-sizing: border-box;
@@ -41,7 +41,7 @@ input[type='checkbox']::after {
   transform: scale(0, 0);
 }
 
-input[type='checkbox']:checked::after {
+input[type='checkbox'].checkbox:checked::after {
   width: 70%;
   height: 30%;
   margin-top: 50%;
@@ -52,11 +52,11 @@ input[type='checkbox']:checked::after {
   transform-origin: left bottom;
 }
 
-input[type='checkbox']:disabled::after {
+input[type='checkbox'].checkbox:disabled::after {
   border-color: #555;
 }
 
-input[type='checkbox']:indeterminate::after {
+input[type='checkbox'].checkbox:indeterminate::after {
   width: 60%;
   height: 0;
   margin-top: 45%;
@@ -65,62 +65,62 @@ input[type='checkbox']:indeterminate::after {
   transform: scale(1, 1);
 }
 
-input[type='checkbox']:checked::after, input[type='checkbox']:indeterminate::after {
+input[type='checkbox'].checkbox:checked::after, input[type='checkbox'].checkbox:indeterminate::after {
   opacity: 1;
 }
 
-input[type='checkbox'].animated {
+input[type='checkbox'].checkbox.animated {
   transition-duration: 0.3s;
 }
 
-input[type='checkbox'].animated::after {
+input[type='checkbox'].checkbox.animated::after {
   transition-duration: 0.3s;
 }
 
-input[type='checkbox']::after {
+input[type='checkbox'].checkbox::after {
   border-color: black;
 }
 
-input[type='checkbox'].inverted:not(:disabled):checked, input[type='checkbox'].inverted:not(:disabled):indeterminate {
+input[type='checkbox'].checkbox.inverted:not(:disabled):checked, input[type='checkbox'].checkbox.inverted:not(:disabled):indeterminate {
   background-color: black;
 }
 
-input[type='checkbox'].inverted:not(:disabled):checked::after, input[type='checkbox'].inverted:not(:disabled):indeterminate::after {
+input[type='checkbox'].checkbox.inverted:not(:disabled):checked::after, input[type='checkbox'].checkbox.inverted:not(:disabled):indeterminate::after {
   border-color: white;
 }
 
-input[type='checkbox'].red::after {
+input[type='checkbox'].checkbox.red::after {
   border-color: red;
 }
 
-input[type='checkbox'].red.inverted:not(:disabled):checked, input[type='checkbox'].red.inverted:not(:disabled):indeterminate {
+input[type='checkbox'].checkbox.red.inverted:not(:disabled):checked, input[type='checkbox'].checkbox.red.inverted:not(:disabled):indeterminate {
   background-color: red;
 }
 
-input[type='checkbox'].red.inverted:not(:disabled):checked::after, input[type='checkbox'].red.inverted:not(:disabled):indeterminate::after {
+input[type='checkbox'].checkbox.red.inverted:not(:disabled):checked::after, input[type='checkbox'].checkbox.red.inverted:not(:disabled):indeterminate::after {
   border-color: white;
 }
 
-input[type='checkbox'].blue::after {
+input[type='checkbox'].checkbox.blue::after {
   border-color: blue;
 }
 
-input[type='checkbox'].blue.inverted:not(:disabled):checked, input[type='checkbox'].blue.inverted:not(:disabled):indeterminate {
+input[type='checkbox'].checkbox.blue.inverted:not(:disabled):checked, input[type='checkbox'].checkbox.blue.inverted:not(:disabled):indeterminate {
   background-color: blue;
 }
 
-input[type='checkbox'].blue.inverted:not(:disabled):checked::after, input[type='checkbox'].blue.inverted:not(:disabled):indeterminate::after {
+input[type='checkbox'].checkbox.blue.inverted:not(:disabled):checked::after, input[type='checkbox'].checkbox.blue.inverted:not(:disabled):indeterminate::after {
   border-color: white;
 }
 
-input[type='checkbox'].green::after {
+input[type='checkbox'].checkbox.green::after {
   border-color: green;
 }
 
-input[type='checkbox'].green.inverted:not(:disabled):checked, input[type='checkbox'].green.inverted:not(:disabled):indeterminate {
+input[type='checkbox'].checkbox.green.inverted:not(:disabled):checked, input[type='checkbox'].checkbox.green.inverted:not(:disabled):indeterminate {
   background-color: green;
 }
 
-input[type='checkbox'].green.inverted:not(:disabled):checked::after, input[type='checkbox'].green.inverted:not(:disabled):indeterminate::after {
+input[type='checkbox'].checkbox.green.inverted:not(:disabled):checked::after, input[type='checkbox'].checkbox.green.inverted:not(:disabled):indeterminate::after {
   border-color: white;
 }

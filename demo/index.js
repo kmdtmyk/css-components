@@ -2,6 +2,56 @@
 document.addEventListener('DOMContentLoaded', e => {
 
   new Vue({
+    el: '#checkbox',
+    data(){
+      return {
+        fontSize: 16,
+        checkbox: {
+          disabled: false,
+          inverted: false,
+          animated: false,
+        },
+      }
+    },
+    computed: {
+      checkboxClass(){
+        const {checkbox} = this
+        const result = ['checkbox']
+        if(checkbox.inverted === true){
+          result.push('inverted')
+        }
+        if(checkbox.animated === true){
+          result.push('animated')
+        }
+        return result
+      },
+    },
+    mounted(){
+      this.$el.querySelectorAll('input[indeterminate]').forEach(input => {
+        input.indeterminate = true
+      })
+      this.updateCode()
+    },
+    watch: {
+      checkbox: {
+        handler(){
+          this.updateCode()
+        },
+        deep: true,
+      },
+    },
+    methods: {
+      updateCode(){
+        const {code} = this.$refs
+        code.innerText = html_beautify(`
+          <input type="checkbox" class="${this.checkboxClass.join(' ')}">
+        `)
+        hljs.highlightBlock(code)
+      },
+    }
+  })
+
+  new Vue({
     el: '#popover',
     data(){
       return {
