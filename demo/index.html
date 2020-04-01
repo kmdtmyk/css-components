@@ -18,6 +18,16 @@
     <div class='container mb-5'>
       <div id='checkbox'>
         <h2>Checkbox</h2>
+        <div class='knobs my-2'>
+          <div class='knobs-item'>
+            <label>font size</label>
+            <input type='number' v-model='fontSize' style='max-width: 4em;'>
+          </div>
+          <div class='knobs-item'>
+            <label for='checkbox-disabled'>disabled</label>
+            <input type='checkbox' v-model='checkbox.disabled' id='checkbox-disabled'>
+          </div>
+        </div>
         <div class='example d-flex justify-content-center align-items-center flex-column'>
           <div :style='{fontSize: `${fontSize}px`}'>
             <input type='checkbox' :class='checkboxClass' :disabled='checkbox.disabled'>
@@ -40,14 +50,6 @@
           </div>
         </div>
         <div class='knobs my-2'>
-          <div class='knobs-item'>
-            <label>font size</label>
-            <input type='number' v-model='fontSize' style='max-width: 4em;'>
-          </div>
-          <div class='knobs-item'>
-            <label for='checkbox-disabled'>disabled</label>
-            <input type='checkbox' v-model='checkbox.disabled' id='checkbox-disabled'>
-          </div>
           <div class='knobs-item'>
             <label for='checkbox-inverted'>inverted</label>
             <input type='checkbox' v-model='checkbox.inverted' id='checkbox-inverted'>
