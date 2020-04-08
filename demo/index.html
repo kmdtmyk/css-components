@@ -7,6 +7,7 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css'>
     <link rel='stylesheet' href='../dist/checkbox.css'>
     <link rel='stylesheet' href='../dist/popover.css'>
+    <link rel='stylesheet' href='../dist/radio.css'>
     <link rel='stylesheet' href='../dist/tooltip.css'>
     <link rel='stylesheet' href='style.css'>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js'></script>
@@ -63,6 +64,51 @@
         <div>
           <a href='../dist/checkbox.css'>css</a>
           <a href='../src/checkbox.scss'>scss</a>
+        </div>
+      </div>
+
+      <div id='radio'>
+        <h2>Radio</h2>
+        <div class='knobs my-2'>
+          <div class='knobs-item'>
+            <label>font size</label>
+            <input type='number' v-model='fontSize' style='max-width: 4em;'>
+          </div>
+          <div class='knobs-item'>
+            <label for='radio-disabled'>disabled</label>
+            <input type='checkbox' v-model='radio.disabled' id='radio-disabled'>
+          </div>
+        </div>
+        <div class='example d-flex justify-content-center align-items-center flex-column'>
+          <div :style='{fontSize: `${fontSize}px`}'>
+            <input type='radio' name='radio1' :class='radioClass' :disabled='radio.disabled'>
+            <input type='radio' name='radio1' :class='radioClass' checked :disabled='radio.disabled'>
+          </div>
+          <div :style='{fontSize: `${fontSize}px`}'>
+            <label>
+              <input type='radio' name='radio2' :class='radioClass' :disabled='radio.disabled'>
+              unchecked
+            </label>
+            <label>
+              <input type='radio' name='radio2' :class='radioClass' checked :disabled='radio.disabled'>
+              checked
+            </label>
+          </div>
+        </div>
+        <div class='knobs my-2'>
+          <div class='knobs-item'>
+            <label for='radio-inverted'>inverted</label>
+            <input type='checkbox' v-model='radio.inverted' id='radio-inverted'>
+          </div>
+          <div class='knobs-item'>
+            <label for='radio-animated'>animated</label>
+            <input type='checkbox' v-model='radio.animated' id='radio-animated'>
+          </div>
+        </div>
+        <pre><code class='html' ref='code'></code></pre>
+        <div>
+          <a href='../dist/radio.css'>css</a>
+          <a href='../src/radio.scss'>scss</a>
         </div>
       </div>
 

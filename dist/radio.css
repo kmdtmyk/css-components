@@ -1,4 +1,4 @@
-input[type='radio'] {
+input[type='radio'].radio {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -15,19 +15,19 @@ input[type='radio'] {
   box-sizing: border-box;
 }
 
-input[type='radio']:hover:not(:disabled) {
+input[type='radio'].radio:hover:not(:disabled) {
   border-color: #80bdff;
 }
 
-input[type='radio']:focus {
+input[type='radio'].radio:focus {
   box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
 }
 
-input[type='radio']:disabled {
+input[type='radio'].radio:disabled {
   background-color: #e0e0e0;
 }
 
-input[type='radio']::after {
+input[type='radio'].radio::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -38,67 +38,67 @@ input[type='radio']::after {
   transform: scale(0, 0);
 }
 
-input[type='radio']:checked::after {
+input[type='radio'].radio:checked::after {
   opacity: 1;
   transform: scale(0.5, 0.5);
 }
 
-input[type='radio']:disabled::after {
+input[type='radio'].radio:disabled::after {
   background-color: #555;
 }
 
-input[type='radio'].animated {
+input[type='radio'].radio.animated {
   transition-duration: 0.3s;
 }
 
-input[type='radio'].animated::after {
+input[type='radio'].radio.animated::after {
   transition-duration: 0.3s;
 }
 
-input[type='radio']::after {
+input[type='radio'].radio::after {
   background-color: black;
 }
 
-input[type='radio'].inverted:not(:disabled):checked {
+input[type='radio'].radio.inverted:not(:disabled):checked {
   background-color: black;
 }
 
-input[type='radio'].inverted:not(:disabled):checked::after {
+input[type='radio'].radio.inverted:not(:disabled):checked::after {
   background-color: white;
 }
 
-input[type='radio'].red::after {
+input[type='radio'].radio.red::after {
   background-color: red;
 }
 
-input[type='radio'].red.inverted:not(:disabled):checked {
+input[type='radio'].radio.red.inverted:not(:disabled):checked {
   background-color: red;
 }
 
-input[type='radio'].red.inverted:not(:disabled):checked::after {
+input[type='radio'].radio.red.inverted:not(:disabled):checked::after {
   background-color: white;
 }
 
-input[type='radio'].blue::after {
+input[type='radio'].radio.blue::after {
   background-color: blue;
 }
 
-input[type='radio'].blue.inverted:not(:disabled):checked {
+input[type='radio'].radio.blue.inverted:not(:disabled):checked {
   background-color: blue;
 }
 
-input[type='radio'].blue.inverted:not(:disabled):checked::after {
+input[type='radio'].radio.blue.inverted:not(:disabled):checked::after {
   background-color: white;
 }
 
-input[type='radio'].green::after {
+input[type='radio'].radio.green::after {
   background-color: green;
 }
 
-input[type='radio'].green.inverted:not(:disabled):checked {
+input[type='radio'].radio.green.inverted:not(:disabled):checked {
   background-color: green;
 }
 
-input[type='radio'].green.inverted:not(:disabled):checked::after {
+input[type='radio'].radio.green.inverted:not(:disabled):checked::after {
   background-color: white;
 }

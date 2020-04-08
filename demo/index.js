@@ -52,6 +52,53 @@ document.addEventListener('DOMContentLoaded', e => {
   })
 
   new Vue({
+    el: '#radio',
+    data(){
+      return {
+        fontSize: 16,
+        radio: {
+          disabled: false,
+          inverted: false,
+          animated: false,
+        },
+      }
+    },
+    computed: {
+      radioClass(){
+        const {radio} = this
+        const result = ['radio']
+        if(radio.inverted === true){
+          result.push('inverted')
+        }
+        if(radio.animated === true){
+          result.push('animated')
+        }
+        return result
+      },
+    },
+    mounted(){
+      this.updateCode()
+    },
+    watch: {
+      radio: {
+        handler(){
+          this.updateCode()
+        },
+        deep: true,
+      },
+    },
+    methods: {
+      updateCode(){
+        const {code} = this.$refs
+        code.innerText = html_beautify(`
+          <input type="radio" class="${this.radioClass.join(' ')}">
+        `)
+        hljs.highlightBlock(code)
+      },
+    }
+  })
+
+  new Vue({
     el: '#popover',
     data(){
       return {
