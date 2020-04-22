@@ -1,0 +1,33 @@
+@import 'svg';
+
+@function arrow-up($fill, $stroke: 'none'){
+  @return inline-svg(
+    '<svg xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M 0 10 L 8 1 L 16 10" fill="#{$fill}" stroke="#{$stroke}" />' +
+    '</svg>'
+  );
+}
+
+@function arrow-down($fill, $stroke: 'none'){
+  @return inline-svg(
+    '<svg xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M 0 -2 L 8 7 L 16 -2" fill="#{$fill}" stroke="#{$stroke}" />' +
+    '</svg>'
+  );
+}
+
+@function arrow-left($fill, $stroke: 'none'){
+  @return inline-svg(
+    '<svg xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M 10 0 L 1 8 L 10 16" fill="#{$fill}" stroke="#{$stroke}" />' +
+    '</svg>'
+  );
+}
+
+@function arrow-right($fill, $stroke: 'none'){
+  @return inline-svg(
+    '<svg xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M -2 0 L 7 8 L -2 16" fill="#{$fill}" stroke="#{$stroke}" />' +
+    '</svg>'
+  );
+}

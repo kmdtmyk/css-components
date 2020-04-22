@@ -1,3 +1,5 @@
+@import 'arrow';
+
 details.popover{
   $border-color: #ccc;
   $background-color: #fff;
@@ -124,71 +126,53 @@ details.popover{
 
   &.popover-arrow[open]{
 
-    &:before, &:after{
+    &:before{
       content: '';
       position: absolute;
-      border: 8px solid transparent;
-      z-index: 50;
-      pointer-events: none;
-    }
-
-    &.popover-left-start, &.popover-left, &.popover-left-end{
-      &:before, &:after{
-        top: 50%;
-        transform: translateY(-50%);
-      }
-      &:before{
-        border-left-color: $border-color;
-        left: 0;
-      }
-      &:after{
-        border-left-color: $background-color;
-        left: -1px;
-      }
-    }
-
-    &.popover-right-start, &.popover-right, &.popover-right-end{
-      &:before, &:after{
-        top: 50%;
-        transform: translateY(-50%);
-      }
-      &:before{
-        border-right-color: $border-color;
-        right: 0;
-      }
-      &:after{
-        border-right-color: $background-color;
-        right: -1px;
-      }
+      z-index: 51;
     }
 
     &.popover-top-start, &.popover-top, &.popover-top-end{
-      &:before, &:after{
+      &:before{
+        background-image: arrow-down($background-color, $border-color);
+        width: 16px;
+        height: 8px;
+        top: -1px;
         left: 50%;
         transform: translateX(-50%);
-      }
-      &:before{
-        border-top-color: $border-color;
-        top: 0;
-      }
-      &:after{
-        border-top-color: $background-color;
-        top: -1px;
       }
     }
 
     &.popover-bottom-start, &.popover-bottom, &.popover-bottom-end{
-      &:before, &:after{
+      &:before{
+        background-image: arrow-up($background-color, $border-color);
+        width: 16px;
+        height: 8px;
+        bottom: -1px;
         left: 50%;
         transform: translateX(-50%);
       }
+    }
+
+    &.popover-left-start, &.popover-left, &.popover-left-end{
       &:before{
-        border-bottom-color: $border-color;
-        bottom: 0;
+        background-image: arrow-right($background-color, $border-color);
+        width: 8px;
+        height: 16px;
+        left: -1px;
+        top: 50%;
+        transform: translateY(-50%);
       }
-      &:after{
-        border-bottom-color: $background-color;
-        bottom: -1px;
+    }
+
+    &.popover-right-start, &.popover-right, &.popover-right-end{
+      &:before{
+        background-image: arrow-left($background-color, $border-color);
+        width: 8px;
+        height: 16px;
+        right: -1px;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
 
@@ -196,48 +180,41 @@ details.popover{
 
   &.popover-dark{
     $background-color: rgba(0, 0, 0, 0.8);
+    $border-color: none;
 
     .popover-content{
       color: #fff;
       background-color: $background-color;
-      border: none;
+      border: $border-color;
     }
 
     &.popover-arrow[open]{
 
-      &.popover-left-start, &.popover-left, &.popover-left-end{
-        &:before{
-          border-left-color: $background-color;
-        }
-        &:after{
-          content: none;
-        }
-      }
-
-      &.popover-right-start, &.popover-right, &.popover-right-end{
-        &:before{
-          border-right-color: $background-color;
-        }
-        &:after{
-          content: none;
-        }
-      }
-
       &.popover-top-start, &.popover-top, &.popover-top-end{
         &:before{
-          border-top-color: $background-color;
-        }
-        &:after{
-          content: none;
+          background-image: arrow-down($background-color, $border-color);
+          top: 0px;
         }
       }
 
       &.popover-bottom-start, &.popover-bottom, &.popover-bottom-end{
         &:before{
-          border-bottom-color: $background-color;
+          background-image: arrow-up($background-color, $border-color);
+          bottom: 0px;
         }
-        &:after{
-          content: none;
+      }
+
+      &.popover-left-start, &.popover-left, &.popover-left-end{
+        &:before{
+          background-image: arrow-right($background-color, $border-color);
+          left: 0px;
+        }
+      }
+
+      &.popover-right-start, &.popover-right, &.popover-right-end{
+        &:before{
+          background-image: arrow-left($background-color, $border-color);
+          right: 0px;
         }
       }
 
