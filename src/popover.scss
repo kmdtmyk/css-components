@@ -185,40 +185,39 @@ details.popover{
 
   &.popover-dark{
     $background-color: rgba(0, 0, 0, 0.8);
-    $border-color: none;
 
     .popover-content{
       color: #fff;
       background-color: $background-color;
-      border: $border-color;
+      border: none;
     }
 
     &.popover-arrow[open]{
 
       &.popover-top-start, &.popover-top, &.popover-top-end{
         &:before{
-          background-image: arrow-down($background-color, $border-color);
+          background-image: arrow-down($background-color);
           top: 0px;
         }
       }
 
       &.popover-bottom-start, &.popover-bottom, &.popover-bottom-end{
         &:before{
-          background-image: arrow-up($background-color, $border-color);
+          background-image: arrow-up($background-color);
           bottom: 0px;
         }
       }
 
       &.popover-left-start, &.popover-left, &.popover-left-end{
         &:before{
-          background-image: arrow-right($background-color, $border-color);
+          background-image: arrow-right($background-color);
           left: 0px;
         }
       }
 
       &.popover-right-start, &.popover-right, &.popover-right-end{
         &:before{
-          background-image: arrow-left($background-color, $border-color);
+          background-image: arrow-left($background-color);
           right: 0px;
         }
       }
