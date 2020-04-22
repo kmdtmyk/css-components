@@ -16,6 +16,11 @@ details.popover{
     display: none;
   }
 
+  summary::marker{
+    font-size: 0;
+    color: transparent;
+  }
+
   &[open]{
     > summary:before{
       content: '';

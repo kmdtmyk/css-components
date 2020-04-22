@@ -12,6 +12,11 @@ details.popover summary::-webkit-details-marker {
   display: none;
 }
 
+details.popover summary::marker {
+  font-size: 0;
+  color: transparent;
+}
+
 details.popover[open] > summary:before {
   content: '';
   position: fixed;
