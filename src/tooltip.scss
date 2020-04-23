@@ -115,6 +115,7 @@
   }
 
   &:before, .tooltip-content{
+    content: '';
     position: absolute;
     z-index: 50;
     opacity: 0;
@@ -122,75 +123,155 @@
   }
 
   &:hover{
+
     &:before, .tooltip-content{
       opacity: 1;
       pointer-events: auto;
     }
+
   }
 
-  &.tooltip-arrow{
+  &.tooltip-top-start, &.tooltip-top, &.tooltip-top-end,
+  &.tooltip-bottom-start, &.tooltip-bottom, &.tooltip-bottom-end{
+    &:before{
+      width: 100%;
+      height: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &.tooltip-top-start, &.tooltip-top, &.tooltip-top-end{
+    &:before{
+      background-repeat: no-repeat;
+      background-position: top;
+      top: -$border-width;
+    }
+  }
+
+  &.tooltip-bottom-start, &.tooltip-bottom, &.tooltip-bottom-end{
+    &:before{
+      background-repeat: no-repeat;
+      background-position: bottom;
+      bottom: -$border-width;
+    }
+  }
+
+  &.tooltip-left-start, &.tooltip-left, &.tooltip-left-end,
+  &.tooltip-right-start, &.tooltip-right, &.tooltip-right-end{
+    &:before{
+      width: 10px;
+      height: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &.tooltip-left-start, &.tooltip-left, &.tooltip-left-end{
+    &:before{
+      background-repeat: no-repeat;
+      background-position: left;
+      left: -$border-width;
+    }
+  }
+
+  &.tooltip-right-start, &.tooltip-right, &.tooltip-right-end{
+    &:before{
+      background-repeat: no-repeat;
+      background-position: right;
+      right: -$border-width;
+    }
+  }
+
+  &.tooltip-arrow, &.tooltip-gap{
 
     &:before{
-      content: '';
       position: absolute;
       z-index: 51;
     }
 
-    &.tooltip-top-start, &.tooltip-top, &.tooltip-top-end,
-    &.tooltip-bottom-start, &.tooltip-bottom, &.tooltip-bottom-end{
-      &:before{
-        width: 16px;
-        height: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
+  }
+
+  &.tooltip-arrow{
 
     &.tooltip-top-start, &.tooltip-top, &.tooltip-top-end{
       &:before{
         background-image: arrow-down($background-color, $border-color);
-        background-repeat: no-repeat;
-        background-position: top;
-        top: -$border-width;
       }
     }
 
     &.tooltip-bottom-start, &.tooltip-bottom, &.tooltip-bottom-end{
       &:before{
         background-image: arrow-up($background-color, $border-color);
-        background-repeat: no-repeat;
-        background-position: bottom;
-        bottom: -$border-width;
-      }
-    }
-
-    &.tooltip-left-start, &.tooltip-left, &.tooltip-left-end,
-    &.tooltip-right-start, &.tooltip-right, &.tooltip-right-end{
-      &:before{
-        width: 10px;
-        height: 16px;
-        top: 50%;
-        transform: translateY(-50%);
       }
     }
 
     &.tooltip-left-start, &.tooltip-left, &.tooltip-left-end{
       &:before{
         background-image: arrow-right($background-color, $border-color);
-        background-repeat: no-repeat;
-        background-position: left;
-        left: -$border-width;
       }
     }
 
     &.tooltip-right-start, &.tooltip-right, &.tooltip-right-end{
       &:before{
         background-image: arrow-left($background-color, $border-color);
-        background-repeat: no-repeat;
-        background-position: right;
-        right: -$border-width;
       }
     }
+
+  }
+
+  $gap: 7px;
+
+  &.tooltip-gap{
+
+    &.tooltip-top-start, &.tooltip-top, &.tooltip-top-end{
+      .tooltip-content{
+        bottom: calc(100% + #{$gap});
+      }
+    }
+
+    &.tooltip-bottom-start, &.tooltip-bottom, &.tooltip-bottom-end{
+      .tooltip-content{
+        top: calc(100% + #{$gap});
+      }
+    }
+
+    &.tooltip-left-start, &.tooltip-left, &.tooltip-left-end{
+      .tooltip-content{
+        right: calc(100% + #{$gap});
+      }
+    }
+
+    &.tooltip-right-start, &.tooltip-right, &.tooltip-right-end{
+      .tooltip-content{
+        left: calc(100% + #{$gap});
+      }
+    }
+
+    &.tooltip-top-start, &.tooltip-top, &.tooltip-top-end{
+      &:before{
+        top: -$border-width - $gap;
+      }
+    }
+
+    &.tooltip-bottom-start, &.tooltip-bottom, &.tooltip-bottom-end{
+      &:before{
+        bottom: -$border-width - $gap;
+      }
+    }
+
+    &.tooltip-left-start, &.tooltip-left, &.tooltip-left-end{
+      &:before{
+        left: -$border-width - $gap;
+      }
+    }
+
+    &.tooltip-right-start, &.tooltip-right, &.tooltip-right-end{
+      &:before{
+        right: -$border-width - $gap;
+      }
+    }
+
 
   }
 
@@ -203,32 +284,64 @@
       border: none;
     }
 
-    &.tooltip-top-start, &.tooltip-top, &.tooltip-top-end{
-      &:before{
-        background-image: arrow-down($background-color);
-        top: 0px;
-      }
-    }
+    &.tooltip-arrow{
 
-    &.tooltip-bottom-start, &.tooltip-bottom, &.tooltip-bottom-end{
-      &:before{
-        background-image: arrow-up($background-color);
-        bottom: 0px;
+      &.tooltip-top-start, &.tooltip-top, &.tooltip-top-end{
+        &:before{
+          background-image: arrow-down($background-color);
+          top: 0px;
+        }
       }
-    }
 
-    &.tooltip-left-start, &.tooltip-left, &.tooltip-left-end{
-      &:before{
-        background-image: arrow-right($background-color);
-        left: 0px;
+      &.tooltip-bottom-start, &.tooltip-bottom, &.tooltip-bottom-end{
+        &:before{
+          background-image: arrow-up($background-color);
+          bottom: 0px;
+        }
       }
-    }
 
-    &.tooltip-right-start, &.tooltip-right, &.tooltip-right-end{
-      &:before{
-        background-image: arrow-left($background-color);
-        right: 0px;
+      &.tooltip-left-start, &.tooltip-left, &.tooltip-left-end{
+        &:before{
+          background-image: arrow-right($background-color);
+          left: 0px;
+        }
       }
+
+      &.tooltip-right-start, &.tooltip-right, &.tooltip-right-end{
+        &:before{
+          background-image: arrow-left($background-color);
+          right: 0px;
+        }
+      }
+
+      &.tooltip-gap{
+
+        &.tooltip-top-start, &.tooltip-top, &.tooltip-top-end{
+          &:before{
+            top: -$gap;
+          }
+        }
+
+        &.tooltip-bottom-start, &.tooltip-bottom, &.tooltip-bottom-end{
+          &:before{
+            bottom: -$gap;
+          }
+        }
+
+        &.tooltip-left-start, &.tooltip-left, &.tooltip-left-end{
+          &:before{
+            left: -$gap;
+          }
+        }
+
+        &.tooltip-right-start, &.tooltip-right, &.tooltip-right-end{
+          &:before{
+            right: -$gap;
+          }
+        }
+
+      }
+
     }
 
   }

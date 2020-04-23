@@ -159,6 +159,7 @@ document.addEventListener('DOMContentLoaded', e => {
         tooltip: {
           direction: 'bottom',
           arrow: false,
+          gap: false,
           dark: false,
           fade: false,
           delay: false,
@@ -172,6 +173,9 @@ document.addEventListener('DOMContentLoaded', e => {
         result.push(`tooltip-${tooltip.direction}`)
         if(tooltip.arrow === true){
           result.push('tooltip-arrow')
+        }
+        if(tooltip.gap === true){
+          result.push('tooltip-gap')
         }
         if(tooltip.dark === true){
           result.push('tooltip-dark')
