@@ -178,3 +178,51 @@ details.popover.popover-dark.popover-arrow[open].popover-right-start:before, det
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%229%22%20height%3D%2216%22%3E%3Cpath%20d%3D%22M%2010%200%20L%201%208%20L%2010%2016%22%20fill%3D%22rgba%280%2C%200%2C%200%2C%200.8%29%22%20stroke%3D%22none%22%20%2F%3E%3C%2Fsvg%3E");
   right: 0px;
 }
+
+details.popover.popover-gap.popover-top-start .popover-content, details.popover.popover-gap.popover-top .popover-content, details.popover.popover-gap.popover-top-end .popover-content {
+  bottom: calc(100% + 7px);
+}
+
+details.popover.popover-gap.popover-bottom-start .popover-content, details.popover.popover-gap.popover-bottom .popover-content, details.popover.popover-gap.popover-bottom-end .popover-content {
+  top: calc(100% + 7px);
+}
+
+details.popover.popover-gap.popover-left-start .popover-content, details.popover.popover-gap.popover-left .popover-content, details.popover.popover-gap.popover-left-end .popover-content {
+  right: calc(100% + 7px);
+}
+
+details.popover.popover-gap.popover-right-start .popover-content, details.popover.popover-gap.popover-right .popover-content, details.popover.popover-gap.popover-right-end .popover-content {
+  left: calc(100% + 7px);
+}
+
+details.popover.popover-gap.popover-arrow[open].popover-top-start:before, details.popover.popover-gap.popover-arrow[open].popover-top:before, details.popover.popover-gap.popover-arrow[open].popover-top-end:before {
+  top: -8px;
+}
+
+details.popover.popover-gap.popover-arrow[open].popover-bottom-start:before, details.popover.popover-gap.popover-arrow[open].popover-bottom:before, details.popover.popover-gap.popover-arrow[open].popover-bottom-end:before {
+  bottom: -8px;
+}
+
+details.popover.popover-gap.popover-arrow[open].popover-left-start:before, details.popover.popover-gap.popover-arrow[open].popover-left:before, details.popover.popover-gap.popover-arrow[open].popover-left-end:before {
+  left: -8px;
+}
+
+details.popover.popover-gap.popover-arrow[open].popover-right-start:before, details.popover.popover-gap.popover-arrow[open].popover-right:before, details.popover.popover-gap.popover-arrow[open].popover-right-end:before {
+  right: -8px;
+}
+
+details.popover.popover-gap.popover-arrow[open].popover-dark.popover-top-start:before, details.popover.popover-gap.popover-arrow[open].popover-dark.popover-top:before, details.popover.popover-gap.popover-arrow[open].popover-dark.popover-top-end:before {
+  top: -7px;
+}
+
+details.popover.popover-gap.popover-arrow[open].popover-dark.popover-bottom-start:before, details.popover.popover-gap.popover-arrow[open].popover-dark.popover-bottom:before, details.popover.popover-gap.popover-arrow[open].popover-dark.popover-bottom-end:before {
+  bottom: -7px;
+}
+
+details.popover.popover-gap.popover-arrow[open].popover-dark.popover-left-start:before, details.popover.popover-gap.popover-arrow[open].popover-dark.popover-left:before, details.popover.popover-gap.popover-arrow[open].popover-dark.popover-left-end:before {
+  left: -7px;
+}
+
+details.popover.popover-gap.popover-arrow[open].popover-dark.popover-right-start:before, details.popover.popover-gap.popover-arrow[open].popover-dark.popover-right:before, details.popover.popover-gap.popover-arrow[open].popover-dark.popover-right-end:before {
+  right: -7px;
+}

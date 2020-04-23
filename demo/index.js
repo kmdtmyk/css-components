@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', e => {
         popover: {
           direction: 'bottom',
           arrow: false,
+          gap: false,
           dark: false,
         },
       }
@@ -116,6 +117,9 @@ document.addEventListener('DOMContentLoaded', e => {
         result.push(`popover-${popover.direction}`)
         if(popover.arrow === true){
           result.push('popover-arrow')
+        }
+        if(popover.gap === true){
+          result.push('popover-gap')
         }
         if(popover.dark === true){
           result.push('popover-dark')
