@@ -43,60 +43,20 @@ details.popover{
     z-index: 50;
   }
 
-  &.popover-left-start{
+  &.popover-top-start, &.popover-top, &.popover-top-end{
     .popover-content{
-      top: 0;
-      right: 100%;
-    }
-  }
-
-  &.popover-left{
-    .popover-content{
-      right: 100%;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
-
-  &.popover-left-end{
-    .popover-content{
-      right: 100%;
-      bottom: 0;
-    }
-  }
-
-  &.popover-right-start{
-    .popover-content{
-      top: 0;
-      left: 100%;
-    }
-  }
-
-  &.popover-right{
-    .popover-content{
-      left: 100%;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
-
-  &.popover-right-end{
-    .popover-content{
-      left: 100%;
-      bottom: 0;
+      bottom: 100%;
     }
   }
 
   &.popover-top-start{
     .popover-content{
-      bottom: 100%;
       right: 0;
     }
   }
 
   &.popover-top{
     .popover-content{
-      bottom: 100%;
       left: 50%;
       transform: translateX(-50%);
     }
@@ -104,20 +64,24 @@ details.popover{
 
   &.popover-top-end{
     .popover-content{
-      bottom: 100%;
+      left: 0;
+    }
+  }
+
+  &.popover-bottom-start, &.popover-bottom, &.popover-bottom-end{
+    .popover-content{
+      top: 100%;
     }
   }
 
   &.popover-bottom-start{
     .popover-content{
-      top: 100%;
       right: 0;
     }
   }
 
   &.popover-bottom{
     .popover-content{
-      top: 100%;
       left: 50%;
       transform: translateX(-50%);
     }
@@ -125,7 +89,58 @@ details.popover{
 
   &.popover-bottom-end{
     .popover-content{
-      top: 100%;
+      left: 0;
+    }
+  }
+
+  &.popover-left-start, &.popover-left, &.popover-left-end{
+    .popover-content{
+      right: 100%;
+    }
+  }
+
+  &.popover-left-start{
+    .popover-content{
+      top: 0;
+    }
+  }
+
+  &.popover-left{
+    .popover-content{
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &.popover-left-end{
+    .popover-content{
+      bottom: 0;
+    }
+  }
+
+
+  &.popover-right-start, &.popover-right, &.popover-right-end{
+    .popover-content{
+      left: 100%;
+    }
+  }
+
+  &.popover-right-start{
+    .popover-content{
+      top: 0;
+    }
+  }
+
+  &.popover-right{
+    .popover-content{
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &.popover-right-end{
+    .popover-content{
+      bottom: 0;
     }
   }
 

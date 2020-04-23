@@ -37,66 +37,72 @@ details.popover .popover-content {
   z-index: 50;
 }
 
-details.popover.popover-left-start .popover-content {
-  top: 0;
-  right: 100%;
-}
-
-details.popover.popover-left .popover-content {
-  right: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-details.popover.popover-left-end .popover-content {
-  right: 100%;
-  bottom: 0;
-}
-
-details.popover.popover-right-start .popover-content {
-  top: 0;
-  left: 100%;
-}
-
-details.popover.popover-right .popover-content {
-  left: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-details.popover.popover-right-end .popover-content {
-  left: 100%;
-  bottom: 0;
+details.popover.popover-top-start .popover-content, details.popover.popover-top .popover-content, details.popover.popover-top-end .popover-content {
+  bottom: 100%;
 }
 
 details.popover.popover-top-start .popover-content {
-  bottom: 100%;
   right: 0;
 }
 
 details.popover.popover-top .popover-content {
-  bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
 }
 
 details.popover.popover-top-end .popover-content {
-  bottom: 100%;
+  left: 0;
+}
+
+details.popover.popover-bottom-start .popover-content, details.popover.popover-bottom .popover-content, details.popover.popover-bottom-end .popover-content {
+  top: 100%;
 }
 
 details.popover.popover-bottom-start .popover-content {
-  top: 100%;
   right: 0;
 }
 
 details.popover.popover-bottom .popover-content {
-  top: 100%;
   left: 50%;
   transform: translateX(-50%);
 }
 
 details.popover.popover-bottom-end .popover-content {
-  top: 100%;
+  left: 0;
+}
+
+details.popover.popover-left-start .popover-content, details.popover.popover-left .popover-content, details.popover.popover-left-end .popover-content {
+  right: 100%;
+}
+
+details.popover.popover-left-start .popover-content {
+  top: 0;
+}
+
+details.popover.popover-left .popover-content {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+details.popover.popover-left-end .popover-content {
+  bottom: 0;
+}
+
+details.popover.popover-right-start .popover-content, details.popover.popover-right .popover-content, details.popover.popover-right-end .popover-content {
+  left: 100%;
+}
+
+details.popover.popover-right-start .popover-content {
+  top: 0;
+}
+
+details.popover.popover-right .popover-content {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+details.popover.popover-right-end .popover-content {
+  bottom: 0;
 }
 
 details.popover.popover-arrow[open]:before {
