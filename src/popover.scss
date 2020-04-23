@@ -137,16 +137,22 @@ details.popover{
       z-index: 51;
     }
 
+    &.popover-top-start, &.popover-top, &.popover-top-end,
+    &.popover-bottom-start, &.popover-bottom, &.popover-bottom-end{
+      &:before{
+        width: 16px;
+        height: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
     &.popover-top-start, &.popover-top, &.popover-top-end{
       &:before{
         background-image: arrow-down($background-color, $border-color);
         background-repeat: no-repeat;
         background-position: top;
-        width: 16px;
-        height: 10px;
         top: -1px;
-        left: 50%;
-        transform: translateX(-50%);
       }
     }
 
@@ -155,11 +161,17 @@ details.popover{
         background-image: arrow-up($background-color, $border-color);
         background-repeat: no-repeat;
         background-position: bottom;
-        width: 16px;
-        height: 10px;
         bottom: -1px;
-        left: 50%;
-        transform: translateX(-50%);
+      }
+    }
+
+    &.popover-left-start, &.popover-left, &.popover-left-end,
+    &.popover-right-start, &.popover-right, &.popover-right-end{
+      &:before{
+        width: 10px;
+        height: 16px;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
 
@@ -168,11 +180,7 @@ details.popover{
         background-image: arrow-right($background-color, $border-color);
         background-repeat: no-repeat;
         background-position: left;
-        width: 10px;
-        height: 16px;
         left: -1px;
-        top: 50%;
-        transform: translateY(-50%);
       }
     }
 
@@ -181,11 +189,7 @@ details.popover{
         background-image: arrow-left($background-color, $border-color);
         background-repeat: no-repeat;
         background-position: right;
-        width: 10px;
-        height: 16px;
         right: -1px;
-        top: 50%;
-        transform: translateY(-50%);
       }
     }
 
