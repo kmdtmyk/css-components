@@ -12,6 +12,7 @@
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
     border: $border-width solid $border-color;
     border-radius: 5px;
+    width: max-content;
   }
 
   &.tooltip-top-start, &.tooltip-top, &.tooltip-top-end{

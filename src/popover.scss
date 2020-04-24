@@ -42,6 +42,7 @@ details.popover{
     border: $border-width solid $border-color;
     border-radius: 4px;
     z-index: 50;
+    width: max-content;
   }
 
   &.popover-top-start, &.popover-top, &.popover-top-end{

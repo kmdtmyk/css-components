@@ -7,6 +7,7 @@
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   border: 1px solid #ccc;
   border-radius: 5px;
+  width: max-content;
 }
 
 .tooltip.tooltip-top-start .tooltip-content, .tooltip.tooltip-top .tooltip-content, .tooltip.tooltip-top-end .tooltip-content {
